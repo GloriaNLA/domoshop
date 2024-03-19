@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeProductsView from '../views/HomeProductsView.vue'
+import MyShopping from '../components/MyShopping/Myshopping.vue'
+import Login from '../components/login/login.vue'
+import ShoppingCart from '../views/ShoppingCartView.vue'
 
 Vue.use(VueRouter)
 
@@ -8,7 +11,22 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeProductsView
+  },
+  {
+    path: '/MyShopping',
+    name: 'myshopping',
+    component: MyShopping
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
+  },
+  {
+    path: '/ShoppingCart',
+    name: 'shoppingCart',
+    component: ShoppingCart
   },
   {
     path: '/about',
