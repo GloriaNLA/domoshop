@@ -1,0 +1,13 @@
+nombre: CERRADURA DIGITAL MAMPARAS CORREDIZAS INTELIGENTE WIFI SML15
+
+Precio: 699
+
+Descripción: Posee 5 métodos de desbloqueo:
+- Huella dactilar
+- Claves digitales
+- Tarjeta de proximidad
+- Llaves físicas
+- Desbloqueo vía app
+Tipo: cerradura digital de embutir
+- Tipo de mortaja: corrediza
+- Modelo de cerradura: SML15

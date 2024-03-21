@@ -6,21 +6,15 @@
                 <div class="row rounded-5 d-flex justify-content-center border-2 h-100 p-2" id="div-img-campovisual">
                     <div id="carouselExampleIndicators" class="carousel slide home-carousel mt-0" data-bs-ride="carousel">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button v-for="(image, index) in product.images" :key="index" type="button" :data-bs-target="'#carouselExampleIndicators'" :data-bs-slide-to="index" :class="{ active: index === 0 }" :aria-current="index === 0 ? 'true' : null" :aria-label="'Slide ' + (index + 1)"></button>
                         </div>
+
                         <div class="carousel-inner">
-                            <div class="carousel-item active imagen-carousel">
-                                <img src="../../assets/card1.png" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#lightbox" data-bs-slide-to="0" alt="...">
-                            </div>
-                            <div class="carousel-item imagen-carousel">
-                                <img src="../../assets/card1.png" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#lightbox" data-bs-slide-to="1" alt="...">
-                            </div>
-                            <div class="carousel-item imagen-carousel">
-                                <img src="../../assets/card1.png" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#lightbox" data-bs-slide-to="2" alt="...">
+                            <div v-for="(image, index) in product.images" :key="index" :class="{ 'carousel-item': true, 'active': index === 0 }">
+                                <img class="d-block w-100 imagen-carousel" :src="image.src" alt="..." data-bs-toggle="modal" data-bs-target="#lightbox" :data-bs-slide-to="index" />
                             </div>
                         </div>
+
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
@@ -33,9 +27,9 @@
                 </div>
             </div>
             <div class="col-md-6 col-sm-12 p-5">
-                <h5 class="card-title">Producto ejemplo</h5>
-                <p class="text-product">Para el hogar </p>
-                <p class="text-product fw-bolder">S/. 100</p>
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="text-product">{{product.description}} </p>
+                <p class="text-product fw-bolder">{{product.price}}</p>
                 <div class="mt-2">
                     <button class="btn btn-success">
                         Añadir a Carrito <i class="fas fa-cart-plus"></i>
@@ -51,19 +45,14 @@
                     </div>
                     <div class="card-body">
                         <ul>
-                            <li class="text-content">Something short and leading about the collection below—its contents, the creator</li>
-                            <li class="text-content">Something short and leading about the collection below—its contents, the creator</li>
-                            <li class="text-content">Something short and leading about the collection below—its contents, the creator</li>
-                            <li class="text-content">Something short and leading about the collection below—its contents, the creator</li>
-                            <li class="text-content">Something short and leading about the collection below—its contents, the creator</li>
-                            <li class="text-content">Something short and leading about the collection below—its contents, the creator</li>
+                            <li class="text-content">{{product.descriptionLarger}}</li>
                         </ul>
                     </div>
                 </div>
 
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-2">
             <h4>Tambien te podrían interesar</h4>
         </div>
     </div>
@@ -77,16 +66,9 @@
                 <div class="modal-body p-0">
                     <div id="carouselLightbox" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="../../assets/card1.png" alt="First slide">
+                            <div v-for="(image, index) in product.images" :key="index" :class="{ 'carousel-item': true, 'active': index === 0 }">
+                                <img class="d-block w-100" :src="image.src" :alt="'slide '+index" />
                             </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="../../assets/card1.png" alt="Second slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="../../assets/card1.png" alt="Third slide">
-                            </div>
-
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselLightbox" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -110,9 +92,15 @@ export default {
     components: {
 
     },
+    props: {
+        product: {
+            type: Object,
+            required: true
+        }
+    },
     methods: {
 
-    }, 
+    },
 
 }
 </script>

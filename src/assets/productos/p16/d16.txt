@@ -1,0 +1,17 @@
+nombre: CERRADURA INTELIGENTE TUYA-X2 LECTOR DE HUELLA DIGITAL
+
+Precio: 399
+
+Descripción: 
+CERRADURA SMART MODELO TUYA PST-X2
+4 métodos de desbloqueo:
+1. huella digital
+2. contraseña,
+3. clave,
+4. tarjeta IC,
+Aplicación Tuya (wifi).
+Admite configuraciones de contraseña anti-espionaje.
+Método de desbloqueo de parámetros del producto
+Huella digital, clave, contraseña, tarjeta IC, aplicación Tuya
+Capacidad de huella digital: 100 piezas
+Capacidad de contraseña: 150 piezas

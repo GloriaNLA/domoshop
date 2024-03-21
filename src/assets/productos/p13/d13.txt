@@ -1,0 +1,12 @@
+nombre: CERRADURA DE INTERIOR INTELIGENTE WIFI HR01 GOLD BRONCE
+
+Precio: 499
+
+Descripción: 
+Nuestra Cerradura Inteligente posee 5 métodos diferentes de desbloqueo:
+
+- Huella Dactilar
+- Clave Digital
+- Tarjeta RFID Magnética
+- Llave Física
+- Vía App (TuyaSmart)

@@ -1,0 +1,7 @@
+nombre: SENSOR DE MOVIMIENTO CON ALARMA/TIMBRE
+
+Precio: 69
+
+Descripción: 
+Sensor de movimiento infrarojo con alarma. Ideal para acceso de tiendas, salas de venta, recepciones, etc.
+2 sonidos seleccionables en el sensor.Detección de movimiento en rango de 6 a 8 mts.Detección de movimiento en ángulo de 120° horizontal y 60° vertical.

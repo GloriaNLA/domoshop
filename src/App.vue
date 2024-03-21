@@ -4,7 +4,7 @@
      <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> 
     </nav>-->
-    <Navbar/>
+    <Navbar :cantCarrito="carrito.length"/>
     <router-view/>
     <Footer/>
   </div>
@@ -18,6 +18,13 @@
     Navbar,
     Footer,
   },
+  data() {
+    return {
+      carrito: [],
+      total: 0,
+      userName : '',
+    };
+  }
 };
 </script>
 <style>
@@ -38,7 +45,7 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #13839c;
+  color: #08323c;
 }
 .bg-main {
   background-color: #13839c;

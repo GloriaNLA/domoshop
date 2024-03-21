@@ -8,13 +8,13 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active imagen-carousel">
-                <img src="@/assets/domotica1.png" class="d-block w-100" alt="...">
+                <img src="@/assets/banners/banner_1.png" class="d-block w-100" alt="banner principal">
             </div>
             <div class="carousel-item imagen-carousel">
-                <img src="@/assets/domotica2.jpeg" class="d-block w-100" alt="...">
+                <img src="@/assets/banners/banner_2.png" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item imagen-carousel">
-                <img src="@/assets/domotica3.jpg" class="d-block w-100" alt="...">
+                <img src="@/assets/banners/banner_3.png" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -31,7 +31,7 @@
 <script>
 
 export default {
-  name: 'componentes-Product',
+  name: 'componentes-Home-Carousel',
   components: {
     
   }

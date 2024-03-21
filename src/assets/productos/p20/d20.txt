@@ -1,0 +1,11 @@
+nombre: TP-LINK - EAP110 PUNTO DE ACCESO INALAMBRICO 300MBPS
+
+Precio: 155
+
+Descripción: 
+Frecuencia 2.4GHz
+1*Puerto Fast Ethernet (RJ-45) (Soporta PoE Pasivo)
+Alimentador PoE Pasivo 24VDC / 0.5A
+Estándares Inalámbricos: IEEE 802.11n, IEEE 802.11g, IEEE 802.11b
+2 Antenas Omnidireccionales de 4dBi
+Tasa de Señal 11n: Hasta 300Mbps, 11g: Hasta 54Mbps, 11b: Hasta 11Mbps (dinámico)
