@@ -5,13 +5,13 @@
             <div class="row g-3 d-flex justify-content-between my-2">
                 <div class="col-md-4 col-lg-3 col-sm-6" v-for="(product, index) in dataProducts" :key="index">
                     <div class="card">
-                        <img :src="product.images[0]" class="card-img-top" alt="domotica" @click="mtdShowProduct(product)">
+                        <img :src="product.images[0]" class="card-img-top" :alt="'domotica'+index" @click="mtdShowProduct(product)">
                         <div class="card-body">
-                            <h5 class="card-title" @click="mtdShowProduct">{{product.name}}</h5>
+                            <h5 class="card-title" @click="mtdShowProduct(product)">{{product.name}}</h5>
                             <p class="text-product">{{product.description}} </p>
-                            <p class="text-product fw-bolder">{{product.price}}</p>
+                            <p class="text-product fw-bolder">S/ {{product.price}}.00 </p>
                             <div class="mt-2">
-                                <button class="btn btn-success w-100">
+                                <button class="btn btn-success w-100" @click="mtdAddCarrito(product)">
                                     Añadir a Carrito <i class="fas fa-cart-plus"></i>
                                 </button>
                             </div>
@@ -41,7 +41,6 @@ export default {
         opcion: Number,
         dataProducts: {
             type: Array,
-            default: []
         }
     },
     computed: {
@@ -52,6 +51,9 @@ export default {
     methods: {
         mtdShowProduct: function (product) {
             this.$emit('mtdShowProduct',product);
+        },
+        mtdAddCarrito: function (product) {
+            this.$emit('mtdAddCarrito',product);
         }
     }
 

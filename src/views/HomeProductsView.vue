@@ -1,8 +1,8 @@
 <template>
 <div class="">
     <Carousel v-if="page=='list'"></Carousel>
-    <ShowProduct v-if="page=='showProduct'" :dataProducts="dataProducts" :product="product"></ShowProduct>
-    <Product v-if="page=='list' || page=='showProduct'" @mtdShowProduct="mtdShowProduct" :opcion="opcion"></Product>
+    <ShowProduct v-if="page=='showProduct'" :dataProducts="dataProducts" :product="product" @mtdAddCarrito="mtdAddCarrito"></ShowProduct>
+    <Product v-if="page=='list'" @mtdAddCarrito="mtdAddCarrito" :dataProducts="dataProducts" @mtdShowProduct="mtdShowProduct" :opcion="opcion"></Product>
 </div>
 </template>
 
@@ -51,7 +51,7 @@ export default {
                 name: 'HOMEPOD MINI YELLOW',
                 price: 915.00,
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
-               images: [{
+                images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
                 }, {
@@ -63,7 +63,7 @@ export default {
                 name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
                 price: 129.00,
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
-               images: [{
+                images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
                 }, {
@@ -75,7 +75,7 @@ export default {
                 name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
                 price: 129.00,
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
-               images: [{
+                images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
                 }, {
@@ -87,7 +87,7 @@ export default {
                 name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
                 price: 129.00,
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
-               images: [{
+                images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
                 }, {
@@ -99,7 +99,7 @@ export default {
                 name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
                 price: 129.00,
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
-               images: [{
+                images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
                 }, {
@@ -111,7 +111,7 @@ export default {
                 name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
                 price: 129.00,
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
-               images: [{
+                images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
                 }, {
@@ -123,7 +123,7 @@ export default {
                 name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
                 price: 129.00,
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
-               images: [{
+                images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
                 }, {
@@ -135,7 +135,7 @@ export default {
                 name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
                 price: 129.00,
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
-               images: [{
+                images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
                 }, {
@@ -147,7 +147,7 @@ export default {
                 name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
                 price: 129.00,
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
-               images: [{
+                images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
                 }, {
@@ -159,7 +159,7 @@ export default {
                 name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
                 price: 129.00,
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
-               images: [{
+                images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
                 }, {
@@ -171,7 +171,7 @@ export default {
                 name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
                 price: 129.00,
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
-               images: [{
+                images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
                 }, {
@@ -183,7 +183,7 @@ export default {
                 name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
                 price: 129.00,
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
-               images: [{
+                images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
                 }, {
@@ -195,7 +195,7 @@ export default {
                 name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
                 price: 129.00,
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
-               images: [{
+                images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
                 }, {
@@ -207,7 +207,7 @@ export default {
                 name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
                 price: 129.00,
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
-               images: [{
+                images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
                 }, {
@@ -219,7 +219,7 @@ export default {
                 name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
                 price: 129.00,
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
-               images: [{
+                images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
                 }, {
@@ -231,7 +231,7 @@ export default {
                 name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
                 price: 129.00,
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
-               images: [{
+                images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
                 }, {
@@ -243,7 +243,7 @@ export default {
                 name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
                 price: 129.00,
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
-               images: [{
+                images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
                 }, {
@@ -255,7 +255,7 @@ export default {
                 name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
                 price: 129.00,
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
-               images: [{
+                images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
                 }, {
@@ -267,7 +267,7 @@ export default {
                 name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
                 price: 129.00,
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
-               images: [{
+                images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
                 }, {
@@ -276,14 +276,51 @@ export default {
                 }],
             }],
             product: {}, //Producto seleccionado
+            carritoEdit: [], //carrito temporeano
+            setItemCarrito: {
+                id: 0,
+                name: '',
+                price: 0,
+                image: '',
+                quantity: 0,
+            }
         };
     },
     methods: {
-        mtdShowProduct: function (data) {
+        mtdShowProduct: function (product) {
             this.page = "showProduct";
             this.opcion = 2;
-            this.product = data.product;
-            console.log(this.product);
+            this.product = product;
+        },
+        mtdAddCarrito: function (product) {
+            var quantity = 1;
+            var booleanAdd = true;
+            this.carritoEdit.forEach(item => {
+                //cambiar la cantidad
+                if (item.id == product.id) {
+                    quantity += 1;
+                    booleanAdd = false;
+                }
+            });
+            if (booleanAdd) {
+                this.setItemCarrito = {
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.images[0].url,
+                    quantity: quantity,
+                }
+                this.carritoEdit.push(this.setItemCarrito);
+            }else{
+                //buscamos y editamos
+                this.carritoEdit.forEach(item => {
+                    if (item.id == product.id) {
+                        item.quantity += 1;
+                    }
+                });
+            }
+            console.log(this.carritoEdit);
+
         }
     }
 

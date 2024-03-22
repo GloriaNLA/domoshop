@@ -4,7 +4,7 @@
      <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> 
     </nav>-->
-    <Navbar :cantCarrito="carrito.length"/>
+    <Navbar/>
     <router-view/>
     <Footer/>
   </div>
@@ -20,8 +20,7 @@
   },
   data() {
     return {
-      carrito: [],
-      total: 0,
+      
       userName : '',
     };
   }
@@ -35,18 +34,7 @@
   text-align: center;
 }
 
-nav {
-  padding: 30px;
-}
 
-nav a {
-  font-weight: bold;
-  color: #3de2e5;
-}
-
-nav a.router-link-exact-active {
-  color: #08323c;
-}
 .bg-main {
   background-color: #13839c;
 }
