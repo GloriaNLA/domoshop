@@ -2,8 +2,8 @@
 <div class="container">
     <div class="p-4">
         <div class="row d-flex justify-content-center bg-light rounded-3 h-customen">
-            <div class="col-md-6 col-sm-12 p-3 mt-2">
-                <div class="row d-flex justify-content-center h-100 p-4">
+            <div class="col-md-6 col-sm-12 p-4 mt-2">
+                <div class="row d-flex justify-content-center h-100">
                     <div class="card-description">
                         <div id="carouselExampleIndicators" class="carousel slide home-carousel mt-0" data-bs-ride="carousel">
                             <div class="carousel-indicators">
@@ -12,7 +12,7 @@
 
                             <div class="carousel-inner">
                                 <div v-for="(image, index) in product.images" :key="index" :class="{ 'carousel-item': true, 'active': index === 0 }">
-                                    <img class="d-block w-100 imagen-carousel" :src="image.src" :alt="'foto del producto'+index" data-bs-toggle="modal" data-bs-target="#lightbox" :data-bs-slide-to="index" />
+                                    <img class="d-block w-100 imagen-carousel" :src="image.url" :alt="'foto del producto'+index" data-bs-toggle="modal" data-bs-target="#lightbox" :data-bs-slide-to="index" />
                                 </div>
                             </div>
 
@@ -39,12 +39,13 @@
                         <p class="text-product fw-bolder">S/. {{product.price}}.00</p>
                     </div>
                     <div class="tarjeta my-2">
-                                <p>Cantidad de productos pedidos: {{ cantidadPedidos }}</p>
-                            </div>
+                        <p>1</p>
+                    </div>
                     <div class="mt-2">
                         <button class="btn btn-success" @click="mtdAddCarrito(product)">
                             Añadir a Carrito <i class="fas fa-cart-plus"></i>
                         </button>
+                        
                     </div>
                 </div>
             </div>
@@ -79,7 +80,7 @@
                     <div id="carouselLightbox" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div v-for="(image, index) in product.images" :key="index" :class="{ 'carousel-item': true, 'active': index === 0 }">
-                                <img class="d-block w-100" :src="image.src" :alt="'slide '+index" />
+                                <img class="d-block w-100" :src="image.url" :alt="'slide '+index" />
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselLightbox" data-bs-slide="prev">
@@ -137,9 +138,10 @@ export default {
 }
 
 .tarjeta {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
 }
+
 </style>
