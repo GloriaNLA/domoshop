@@ -70,9 +70,9 @@
 
             </div>
         </div>
-        <div class="row mt-2">
+        <!-- <div class="row mt-2">
             <h4>Tambien te podrían interesar</h4>
-        </div>
+        </div> -->
     </div>
     <!-- Modal -->
     <div class="modal" id="lightbox" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -45,6 +45,6 @@ export default {
 }
 
 .imagen-carousel{
-    height: 30em;
+    height: 25em;
 }
 </style>

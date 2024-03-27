@@ -33,7 +33,7 @@
                                     </button>
                                 </div>
                             </td>
-                            <td>{{ item.subtotal}}</td>
+                            <td>S/. {{ item.subtotal}}.00</td>
                             <td>
                                 <div>
                                     <button type="button" class="btn btn-outline-danger btn-sm" @click="mtdDeleteProduct(item.id)">

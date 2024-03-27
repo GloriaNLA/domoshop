@@ -84,9 +84,11 @@ export default {
                 }],
             }, {
                 id: 4,
-                name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
-                price: 129.00,
-                description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
+                name: 'SENSOR DE INUNDACIÓN TUYA',
+                price: 49.00,
+                description: 'Detector inalámbrico de fugas de agua',
+                descriptionLarger: 'Cuando se detecta agua notifica a través de la aplicación móvil, Control desde cualquier lugar donde Internet esté disponible'+
+                'Compatible con iOS y Android',
                 images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
@@ -96,9 +98,9 @@ export default {
                 }],
             }, {
                 id: 5,
-                name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
-                price: 129.00,
-                description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
+                name: 'CONTROL MOTOR INTELIGENTE SMART WIFI',
+                price: 229.00,
+                description: 'CONTROL INTELIGENTE PARA CORTINAS Y PERSIANAS CON CADENA TUYA-YH002',
                 images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
@@ -108,9 +110,11 @@ export default {
                 }],
             }, {
                 id: 6,
-                name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
-                price: 129.00,
-                description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
+                name: 'FOCO INTELIGENTE XIAOMI MI SMART LED BULB WARM',
+                price: 29.00,
+                description: 'La bombilla LED Mi Smart (blanco cálido) utiliza perlas de 2700K',
+                descriptionLarger:' El resultado es una iluminación suave que lo ayuda a relajarse y hace que su hogar se sienta más cálido.'
+                +'El brillo alcanza los 810 lm y se puede ajustar en cualquier momento.',
                 images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
@@ -120,9 +124,9 @@ export default {
                 }],
             }, {
                 id: 7,
-                name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
-                price: 129.00,
-                description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
+                name: 'FOCO INTELIGENTE MI BULB LED SMART ESSENTIALS',
+                price: 49.00,
+                description: 'Diseñada para que puedas utilizarla con tu smartphone',
                 images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
@@ -132,9 +136,9 @@ export default {
                 }],
             }, {
                 id: 8,
-                name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
+                name: 'INTERRUPTOR INTELIGENTE UNIVERSAL',
                 price: 129.00,
-                description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
+                description: 'COM WIFI LUZ SMART BLANCO',
                 images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
@@ -144,9 +148,9 @@ export default {
                 }],
             }, {
                 id: 9,
-                name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
-                price: 129.00,
-                description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
+                name: 'INTERRUPTOR INTELIGENTE UNIVERSAL SMART NEGRO',
+                price: 90.00,
+                description: 'Interruptor inteligente wifi tactil para pared de 2 banda UNIVERSAL',
                 images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
@@ -156,9 +160,11 @@ export default {
                 }],
             }, {
                 id: 10,
-                name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
-                price: 129.00,
-                description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
+                name: 'FOCO LED INTELIGENTE',
+                price: 62.00,
+                description: 'FOCO LED INTELIGENTE WIFI WIZ FILAMENTO GLOBO 6.9W E27',
+                descriptionLarger:'Con WiZ tienes una solución para ambientar con diferentes tonos de luz todos los espacios del hogar'+
+                'negocio o lugar de trabajo con nuestra amplia familia de productos! Los puedes conectar con vía Wi-Fi',
                 images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',

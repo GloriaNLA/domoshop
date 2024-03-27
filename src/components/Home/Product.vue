@@ -4,8 +4,8 @@
         <div class="container">
             <div class="row g-3 d-flex justify-content-between my-2">
                 <div class="col-md-4 col-lg-3 col-sm-6" v-for="(product, index) in dataProducts" :key="index">
-                    <div class="card">
-                        <img :src="product.images[0]" class="card-img-top" :alt="'domotica'+index" @click="mtdShowProduct(product)">
+                    <div class="card h-card">
+                        <img scr="@/assets/logo" class="card-img-top" :alt="'domotica'+index" @click="mtdShowProduct(product)">
                         <div class="card-body">
                             <h5 class="card-title" @click="mtdShowProduct(product)">{{product.name}}</h5>
                             <p class="text-product">{{product.description}} </p>
@@ -64,5 +64,8 @@ export default {
 .text-product {
     text-align: left !important;
     color: #727b8b;
+}
+.h-card {
+    height: 30em;
 }
 </style>
