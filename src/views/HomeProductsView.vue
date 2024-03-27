@@ -1,7 +1,7 @@
 <template>
 <div class="">
     <Carousel v-if="page=='list'"></Carousel>
-    <ShowProduct v-if="page=='showProduct'" :dataProducts="dataProducts" :product="product" @mtdAddCarrito="mtdAddCarrito"></ShowProduct>
+    <ShowProduct v-if="page=='showProduct'" :dataProducts="dataProducts" :product="product" @mtdAddCarrito="mtdAddCarrito" @mtdbackhome="mtdbackhome"></ShowProduct>
     <Product v-if="page=='list'" @mtdAddCarrito="mtdAddCarrito" :dataProducts="dataProducts" @mtdShowProduct="mtdShowProduct" :opcion="opcion"></Product>
 
     <div style="position: fixed; top: 90%; transform: translateY(-50%); left: 10px;">
@@ -46,6 +46,7 @@ export default {
     data() {
         return {
             page: 'list',
+            opcion: 1,
             product: '',
             opcion: 1,
             dataProducts: [{
@@ -55,10 +56,7 @@ export default {
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
                 images: [{
                     id: 1,
-                    url: '@/assets/productos/p1/p1_1.jpg',
-                }, {
-                    id: 2,
-                    url: '@/assets/productos/p1/p1_2.jpg'
+                    url: 'https://home.ripley.com.pe/Attachment/WOP_5/2065325589768/2065325589768_2.jpg',
                 }],
             }, {
                 id: 2,
@@ -68,7 +66,11 @@ export default {
                 descriptionLarger: 'Este nuevo parlante de Xiaomi, posee Alexa que es una IA de voz inteligente basada en la nube que te permite controlar el altavoz con comandos de voz.',
                 images: [{
                     id: 1,
-                    url: '@/assets/productos/p2/p2.jpg',
+                    url: 'https://xiaomioficial.pe/media/catalog/product/M/M/MM000XIA81_1.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=549&width=549&canvas=549:549',
+                },{id: 2 , url:'https://xiaomioficial.pe/media/catalog/product/M/M/MM000XIA81_2.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=549&width=549&canvas=549:549'},
+                {
+                    id: 3,
+                    url: 'https://xiaomioficial.pe/media/catalog/product/M/M/MM000XIA81_4.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:',
                 }],
             }, {
                 id: 3,
@@ -77,10 +79,10 @@ export default {
                 description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
                 images: [{
                     id: 1,
-                    url: '../assets/productos/p1/p1_1.jpg',
+                    url: 'https://coolboxpe.vtexassets.com/arquivos/ids/339202-800-auto?v=638418205758170000&width=800&height=auto&aspect=true',
                 }, {
                     id: 2,
-                    url: '../assets/productos/p1/p1_2.jpg',
+                    url: 'https://coolboxpe.vtexassets.com/arquivos/ids/339203-800-auto?v=638418205914270000&width=800&height=auto&aspect=true',
                 }],
             }, {
                 id: 4,
@@ -91,10 +93,10 @@ export default {
                 'Compatible con iOS y Android',
                 images: [{
                     id: 1,
-                    url: '../assets/productos/p1/p1_1.jpg',
+                    url: 'https://promart.vteximg.com.br/arquivos/ids/7343818-1000-1000/image-3baac2f1758a41b0ab72d1f993e7bfdf.jpg?v=638254061736130000',
                 }, {
                     id: 2,
-                    url: '../assets/productos/p1/p1_2.jpg',
+                    url: 'https://promart.vteximg.com.br/arquivos/ids/7343817-1000-1000/image-29334a78b1024371af12c6229b30a937.jpg?v=638254061735970000'
                 }],
             }, {
                 id: 5,
@@ -103,10 +105,10 @@ export default {
                 description: 'CONTROL INTELIGENTE PARA CORTINAS Y PERSIANAS CON CADENA TUYA-YH002',
                 images: [{
                     id: 1,
-                    url: '../assets/productos/p1/p1_1.jpg',
+                    url: 'https://promart.vteximg.com.br/arquivos/ids/6577833-1000-1000/image-09cfc332d4644a41aa02343e93c0ce8b.jpg?v=638018729258470000',
                 }, {
                     id: 2,
-                    url: '../assets/productos/p1/p1_2.jpg',
+                    url: 'https://promart.vteximg.com.br/arquivos/ids/6577834-1000-1000/image-511298c95a58436cbf680979753e0ca4.jpg?v=638018729258930000',
                 }],
             }, {
                 id: 6,
@@ -117,10 +119,10 @@ export default {
                 +'El brillo alcanza los 810 lm y se puede ajustar en cualquier momento.',
                 images: [{
                     id: 1,
-                    url: '../assets/productos/p1/p1_1.jpg',
+                    url: 'https://ripleype.imgix.net/https%3A%2F%2Fdpq25p1ucac70.cloudfront.net%2Fseller-place-files%2Fmrkl-files%2F2149%2FELECTROHOGAR%2FMISmartLedBulbwarmWhite_1_163535716553_16.jpeg?w=750&h=555&ch=Width&auto=format&cs=strip&bg=FFFFFF&q=60&trimcolor=FFFFFF&trim=color&fit=fillmax&ixlib=js-1.1.0&s=4a94203e7b04186a2534d84dcacc7b86',
                 }, {
                     id: 2,
-                    url: '../assets/productos/p1/p1_2.jpg',
+                    url: 'https://ripleype.imgix.net/https%3A%2F%2Fdpq25p1ucac70.cloudfront.net%2Fseller-place-files%2Fmrkl-files%2F2149%2FELECTROHOGAR%2FMISmartLedBulbwarmWhite_3_163619654080_30.jpeg?w=750&h=555&ch=Width&auto=format&cs=strip&bg=FFFFFF&q=60&trimcolor=FFFFFF&trim=color&fit=fillmax&ixlib=js-1.1.0&s=83824b393032ff508ce40870a677d0da',
                 }],
             }, {
                 id: 7,
@@ -129,10 +131,10 @@ export default {
                 description: 'Diseñada para que puedas utilizarla con tu smartphone',
                 images: [{
                     id: 1,
-                    url: '../assets/productos/p1/p1_1.jpg',
+                    url: 'https://falabella.scene7.com/is/image/FalabellaPE/gsc_123404289_3676546_1?wid=1500&hei=1500&qlt=70',
                 }, {
                     id: 2,
-                    url: '../assets/productos/p1/p1_2.jpg',
+                    url: 'https://falabella.scene7.com/is/image/FalabellaPE/gsc_123404289_3676546_4?wid=1500&hei=1500&qlt=70',
                 }],
             }, {
                 id: 8,
@@ -141,10 +143,10 @@ export default {
                 description: 'COM WIFI LUZ SMART BLANCO',
                 images: [{
                     id: 1,
-                    url: '../assets/productos/p1/p1_1.jpg',
+                    url: 'https://ripleype.imgix.net/https%3A%2F%2Fstatic.sellercenter.pe%2Fimages%2Fproducts%2Fjxqy4ULnn4-30.png?w=750&h=555&ch=Width&auto=format&cs=strip&bg=FFFFFF&q=60&trimcolor=FFFFFF&trim=color&fit=fillmax&ixlib=js-1.1.0&s=a2455f2e3119cd5cb6b6d29c32c96410',
                 }, {
                     id: 2,
-                    url: '../assets/productos/p1/p1_2.jpg',
+                    url: 'https://ripleype.imgix.net/https%3A%2F%2Fstatic.sellercenter.pe%2Fimages%2Fproducts%2FGp2zpCTjB-34.jpg?w=750&h=555&ch=Width&auto=format&cs=strip&bg=FFFFFF&q=60&trimcolor=FFFFFF&trim=color&fit=fillmax&ixlib=js-1.1.0&s=1ab8bf82d1178ba6ee5bdf98c941b8aa',
                 }],
             }, {
                 id: 9,
@@ -153,10 +155,10 @@ export default {
                 description: 'Interruptor inteligente wifi tactil para pared de 2 banda UNIVERSAL',
                 images: [{
                     id: 1,
-                    url: '../assets/productos/p1/p1_1.jpg',
+                    url: 'https://coolboxpe.vtexassets.com/arquivos/ids/208180-800-auto?v=637834975084330000&width=800&height=auto&aspect=true',
                 }, {
                     id: 2,
-                    url: '../assets/productos/p1/p1_2.jpg',
+                    url: 'https://coolboxpe.vtexassets.com/arquivos/ids/208181-800-auto?v=637834975217930000&width=800&height=auto&aspect=true'
                 }],
             }, {
                 id: 10,
@@ -167,28 +169,26 @@ export default {
                 'negocio o lugar de trabajo con nuestra amplia familia de productos! Los puedes conectar con vía Wi-Fi',
                 images: [{
                     id: 1,
-                    url: '../assets/productos/p1/p1_1.jpg',
+                    url: 'https://www.efe.com.pe/media/catalog/product/h/m/hm000wiz02_1.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700',
                 }, {
                     id: 2,
-                    url: '../assets/productos/p1/p1_2.jpg',
+                    url: 'https://www.efe.com.pe/media/catalog/product/h/m/hm000wiz02_3.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700',
                 }],
             }, {
                 id: 11,
-                name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
-                price: 129.00,
-                description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
+                name: 'CÁMARA SEGURIDAD FOCO 180° WIFI INTELIGENTE',
+                price: 80.00,
+                description: 'MICROFONO INCORPORADO, SEGUIMIENRO INTELIGENTE',
                 images: [{
                     id: 1,
-                    url: '../assets/productos/p1/p1_1.jpg',
-                }, {
-                    id: 2,
-                    url: '../assets/productos/p1/p1_2.jpg',
+                    url: 'https://falabella.scene7.com/is/image/FalabellaPE/gsc_121327704_2991917_1?wid=800&hei=800&qlt=70',
                 }],
             }, {
                 id: 12,
-                name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
-                price: 129.00,
-                description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
+                name: 'CERRADURA DIGITAL MAMPARAS',
+                price: 699.00,
+                description: 'CERRADURA DIGITAL MAMPARAS CORREDIZAS INTELIGENTE WIFI SML15',
+                descriptionLarger: 'Huella dactilar,  Claves digitales',
                 images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
@@ -198,9 +198,9 @@ export default {
                 }],
             }, {
                 id: 13,
-                name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
+                name: 'CERRADURA DE INTERIOR INTELIGENTE',
                 price: 129.00,
-                description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
+                description: 'Posee 5 métodos diferentes de desbloqueo',
                 images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
@@ -210,9 +210,9 @@ export default {
                 }],
             }, {
                 id: 14,
-                name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
-                price: 129.00,
-                description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
+                name: 'TIMBRE INTERCOMUNICADOR INTELIGENTE EXTERIORES WIFI INALAMBRICO HD',
+                price: 69.00,
+                description: 'Nuevo timbre inteligente evitaras abrirle la puerta a desconocidos',
                 images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
@@ -222,9 +222,9 @@ export default {
                 }],
             }, {
                 id: 15,
-                name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
-                price: 129.00,
-                description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
+                name: 'ALARMA SENSOR INTELIGENTE EXTERIOR PIR SOLAR WIFI',
+                price: 192.00,
+                description: 'Sensor de detección exterior con energía solar Tuya WiFi con función de alarma de sonido y luz',
                 images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
@@ -234,21 +234,10 @@ export default {
                 }],
             }, {
                 id: 16,
-                name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
-                price: 129.00,
-                description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
-                images: [{
-                    id: 1,
-                    url: '../assets/productos/p1/p1_1.jpg',
-                }, {
-                    id: 2,
-                    url: '../assets/productos/p1/p1_2.jpg',
-                }],
-            }, {
-                id: 1,
-                name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
-                price: 129.00,
-                description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
+                name: 'CERRADURA INTELIGENTE TUYA-X2 LECTOR DE HUELLA DIGITAL',
+                price: 399.00,
+                description: '4 Metodos de bloqueo: Huella Digital, Contraseña, clave, tarjeta IC',
+                descriptionLarger: 'Admite configuraciones de contraseña anti-espionaje. Método de desbloqueo de parámetros del producto Huella digital, clave, contraseña, tarjeta IC, ',
                 images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
@@ -258,9 +247,9 @@ export default {
                 }],
             }, {
                 id: 17,
-                name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
-                price: 129.00,
-                description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
+                name: 'CÁMARAS DE SEGURIDAD KIT 2',
+                price: 589.00,
+                description: 'Uso Ideal: Cuida a tu Bebe, Casa, Oficina, Negocio, Mascota Etc.',
                 images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
@@ -270,9 +259,10 @@ export default {
                 }],
             }, {
                 id: 18,
-                name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
-                price: 129.00,
-                description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
+                name: 'SENSOR DE MOVIMIENTO CON ALARMA/TIMBRE',
+                price: 69.00,
+                description: 'Sensor de movimiento infrarojo con alarma.',
+                descriptionLarger: 'Ideal para acceso de tiendas, salas de venta, recepciones, etc.',
                 images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
@@ -282,9 +272,9 @@ export default {
                 }],
             }, {
                 id: 19,
-                name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
-                price: 129.00,
-                description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
+                name: 'TP-LINK - EXTENSOR DE COBERTURA TL-WA850RE',
+                price: 89.00,
+                description: 'Expande fácilmente la cobertura inalámbrica con sólo presionar el botón de Extensor de Rango',
                 images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
@@ -294,9 +284,9 @@ export default {
                 }],
             }, {
                 id: 20,
-                name: 'PARLANTE INTELIGENTE CON ASISTENTE DE VOZ',
-                price: 129.00,
-                description: 'PARLANTE CON ASISTENTE DE VOZ ECHO POP (1ST GEN) CHARCOAL',
+                name: 'TP-LINK - EAP110 PUNTO DE ACCESO INALAMBRICO 300MBPS',
+                price: 155.00,
+                description: 'TP-LINK',
                 images: [{
                     id: 1,
                     url: '../assets/productos/p1/p1_1.jpg',
@@ -343,6 +333,10 @@ export default {
             var offcanvas = bootstrap.Offcanvas.getInstance(myOffcanvas);
             offcanvas.hide();
         },
+        mtdbackhome: function(){
+            this.page = "list";
+            this.opcion = 1;
+        }
     }
 
 }

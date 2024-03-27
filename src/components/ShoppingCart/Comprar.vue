@@ -259,6 +259,9 @@ export default {
         },
         retroceder: function () {
             this.numPage = 1;
+        },
+        mtdbackhome: function () {
+            this.$emit('mtdbackhome');
         }
     }
 }

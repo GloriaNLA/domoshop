@@ -11,7 +11,7 @@
                     <thead class="table-secondary">
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col" colspan="2">Producto</th>
+                            <th scope="col" colspan="1">Producto</th>
                             <th scope="col">Cantidad</th>
                             <th scope="col">SubTotal</th>
                             <th scope="col">Acciones</th>
@@ -20,7 +20,6 @@
                     <tbody>
                         <tr v-for="(item, index) in cpData">
                             <th scope="row">{{ index + 1 }}</th>
-                            <td>{{ item.image}}</td>
                             <td>{{ item.name }}</td>
                             <td>
                                 <div class="quantity-control">

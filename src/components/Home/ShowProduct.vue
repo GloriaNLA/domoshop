@@ -1,6 +1,13 @@
 <template>
 <div class="container">
     <div class="p-4">
+        <div class="row d-flex justify-content-start my-3">
+            <div class=" col-auto">
+                <button class="btn btn-info btn-sm" @click="mtdbackhome">
+                    <i class="fa fa-arrow-left"></i> Home
+                </button>
+            </div>
+        </div>
         <div class="row d-flex justify-content-center bg-light rounded-3 h-customen">
             <div class="col-md-6 col-sm-12 p-4 mt-2">
                 <div class="row d-flex justify-content-center h-100">
@@ -10,9 +17,11 @@
                                 <button v-for="(image, index) in product.images" :key="index" type="button" :data-bs-target="'#carouselExampleIndicators'" :data-bs-slide-to="index" :class="{ active: index === 0 }" :aria-current="index === 0 ? 'true' : null" :aria-label="'Slide ' + (index + 1)"></button>
                             </div>
 
-                            <div class="carousel-inner">
+                            <div class="carousel-inner text-center">
                                 <div v-for="(image, index) in product.images" :key="index" :class="{ 'carousel-item': true, 'active': index === 0 }">
-                                    <img class="d-block w-100 imagen-carousel" :src="image.url" :alt="'foto del producto'+index" data-bs-toggle="modal" data-bs-target="#lightbox" :data-bs-slide-to="index" />
+                                    <div class="">
+                                        <img class="d-block imagen-carousel mx-auto" :src="image.url" :alt="'foto del producto'+index" data-bs-toggle="modal" data-bs-target="#lightbox" :data-bs-slide-to="index" style="width: 400px; height: 400px;" />
+                                    </div>
                                 </div>
                             </div>
 
@@ -63,7 +72,7 @@
                     </div>
                     <div class="card-body">
                         <ul>
-                            <li class="text-content">{{product.descriptionLarger}}</li>
+                            <li class="text-content">{{product.description}}</li>
                         </ul>
                     </div>
                 </div>
@@ -130,8 +139,8 @@ export default {
         cpQuantity() {
             let cont = 0;
             this.carrito.forEach(item => {
-                if(item.id == this.product.id){
-                    cont +=1;
+                if (item.id == this.product.id) {
+                    cont += 1;
                 }
             });
             return cont;
@@ -147,6 +156,9 @@ export default {
         mtdItemProductDelect: function (id) {
             this.eliminarItemDelCarrito(id);
         },
+        mtdbackhome: function () {
+            this.$emit('mtdbackhome');
+        }
     },
 
 }
