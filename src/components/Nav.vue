@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-md px-5 mb-0 flex-column flex-md-row d-flex justify-content-between">
         <a class="py-2" href="#" aria-label="Product">
             <div>
-                    <img src="@/assets/logoempire.jpg" alt="Carrito Vacío" style="width: 60px; height: 60px;">
+                    <img src="@/assets/logoempire.png" alt="Carrito Vacío" style="width: 60px; height: 60px;">
                 </div>
         </a>
         <router-link class="nav-link" to="/">Inicio</router-link>
@@ -13,9 +13,8 @@
                 <span class="badge text-bg-info">{{ carrito.length }}</span>
             </div>
         </router-link>
-        <router-link class="nav-link" to="/MyShopping">Mis compras</router-link>
         <router-link class="nav-link" to="/login">Iniciar Sesion</router-link>
-        <router-link class="nav-link" to="/login">Contactanos</router-link>
+        <router-link class="nav-link" to="/login">Asesoría</router-link>
     </nav>
 </header>
 </template>

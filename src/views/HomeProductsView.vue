@@ -5,12 +5,11 @@
     <Product v-if="page=='list'" @mtdAddCarrito="mtdAddCarrito" :dataProducts="dataProducts" @mtdShowProduct="mtdShowProduct" :opcion="opcion"></Product>
 
     <div style="position: fixed; top: 90%; transform: translateY(-50%); left: 10px;">
-        <button class="btn btn-primary rounded-circle" type="button" data-bs-toggle="offcanvas"
+        <button class="btn btn-primary rounded-circle" type="button" data-bs-toggle="offcanvas" data-bs-tooltip="tooltip"
          data-bs-target="#offcanvasScrolling"
          aria-controls="offcanvasScrolling" data-bs-placement="top"
         data-bs-custom-class="custom-tooltip"
-        data-bs-title="This top tooltip is themed via CSS variables."
-         
+        data-bs-title="Comunicate con uno de nuestros asesores"
          >
             <i class="fas fa-user i-custom"></i> <!-- Cambia 'fas fa-user' al nombre de la clase de tu icono de asistente -->
         </button>
@@ -21,7 +20,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <p>Try scrolling the rest of the page to see this option in action.</p>
+            <BodyOffCanvas @mtdHidden="mtdHidden"></BodyOffCanvas>
         </div>
     </div>
 </div>
@@ -31,16 +30,19 @@
 import Carousel from '@/components/Home/Carousel.vue';
 import Product from '@/components/Home/Product.vue';
 import ShowProduct from '@/components/Home/ShowProduct.vue';
+import BodyOffCanvas from '@/components/Home/BodyOffCanvas.vue';
 import {
     mapMutations
 } from 'vuex';
+
 
 export default {
     name: 'HomeProductsView',
     components: {
         Carousel,
         Product,
-        ShowProduct
+        ShowProduct,
+        BodyOffCanvas
 
     },
     data() {
@@ -331,7 +333,12 @@ export default {
             }
             this.agregarAlCarrito(this.setItemCarrito);
 
-        }
+        },
+        mtdHidden: function () {
+            let myOffcanvas = document.getElementById('offcanvasScrolling');
+            var offcanvas = bootstrap.Offcanvas.getInstance(myOffcanvas);
+            offcanvas.hide();
+        },
     }
 
 }

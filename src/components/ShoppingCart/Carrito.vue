@@ -22,11 +22,21 @@
                             <th scope="row">{{ index + 1 }}</th>
                             <td>{{ item.image}}</td>
                             <td>{{ item.name }}</td>
-                            <td>{{ item.quantity}}</td>
+                            <td>
+                                <div class="quantity-control">
+                                    <button type="button" class="btn btn-outline-info btn-sm" @click="mtdItemProductDelect(item.id)">
+                                        <i class="fa fa-minus"></i>
+                                    </button>
+                                    <div class="quantity-display">{{ item.quantity }}</div>
+                                    <button type="button" class="btn btn-outline-info btn-sm" @click="mtdAddProduct(item)">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                </div>
+                            </td>
                             <td>{{ item.subtotal}}</td>
                             <td>
                                 <div>
-                                    <button type="button" class="btn btn-outline-danger btn-sm">
+                                    <button type="button" class="btn btn-outline-danger btn-sm" @click="mtdDeleteProduct(item.id)">
                                         <i class="fa fa-trash"></i>
                                     </button>
                                 </div>
@@ -43,7 +53,7 @@
                 </blockquote>
                 <hr>
                 <p class="text-start"><b>Total: S/. {{ subtotal }}.00</b></p>
-                <p class="text-start">Costo de Envio: S/.10.00</p>
+                <p class="text-start">Costo de Envio: S/.00.00</p>
                 <hr>
                 <p class="text-start"><b>Total: {{ total }}</b></p>
                 <div class="mt-3">
@@ -72,10 +82,12 @@
 </div>
 </template>
 
-    
 <script>
 import {
     mapState
+} from 'vuex';
+import {
+    mapMutations
 } from 'vuex';
 export default {
     name: 'componentes-ShoppingCart-Carrito',
@@ -139,19 +151,39 @@ export default {
             return total;
         },
         total() {
-            return this.subtotal + 10;
+            return this.subtotal + 0;
         }
     },
     methods: {
-        mtdBuy: function () {
-            this.$emit('mtdBuy',this.dataShow);
+        ...mapMutations(['eliminarDelCarrito']),
+        ...mapMutations(['eliminarItemDelCarrito']),
+        ...mapMutations(['agregarAlCarrito']),
 
+        mtdBuy: function () {
+            this.$emit('mtdBuy', this.dataShow);
+
+        },
+        mtdDeleteProduct: function (id) {
+            this.eliminarDelCarrito(id);
+        },
+        mtdItemProductDelect: function (id) {
+            this.eliminarItemDelCarrito(id);
+        },
+        mtdAddProduct: function (product) {
+            var setItemCarrito = {
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                image: product.image,
+                quantity: 1,
+            }
+            this.agregarAlCarrito(setItemCarrito);
         }
     }
 
 }
 </script>
-    
+
 <style>
 .card-custom {
     border-radius: 5px;
@@ -210,5 +242,15 @@ export default {
 .btn-buy:hover:after {
     width: 100%;
     transition: 800ms ease all;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-display {
+    margin: 0 10px;
+    /* Espacio entre los botones y el número */
 }
 </style>
