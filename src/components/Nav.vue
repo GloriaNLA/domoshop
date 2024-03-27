@@ -14,7 +14,7 @@
             </div>
         </router-link>
         <router-link class="nav-link" to="/login">Iniciar Sesion</router-link>
-        <router-link class="nav-link" to="/login">Asesoría</router-link>
+        <router-link class="nav-link" to="/asesorar">Asesoría</router-link>
     </nav>
 </header>
 </template>

@@ -4,6 +4,7 @@ import HomeProductsView from '../views/HomeProductsView.vue'
 import MyShopping from '../components/MyShopping/Myshopping.vue'
 import Login from '../components/login/login.vue'
 import ShoppingCart from '../views/ShoppingCartView.vue'
+import Asesorar from '../components/Asesoramiento/asesor.vue'
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login
+  },
+  {
+    path: '/asesorar',
+    name: 'asesorar',
+    component: Asesorar
   },
   {
     path: '/ShoppingCart',

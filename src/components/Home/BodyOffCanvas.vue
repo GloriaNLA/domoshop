@@ -37,14 +37,14 @@
     </div>
     <div class="col-md-12">
         <label for="floatingTextarea" class="form-label text-start">Comentarios</label>
-        <textarea class="form-control" placeholder="Deje aquí su comentario" id="floatingTextarea" row="5" v-model="form.message"></textarea>
+        <textarea class="form-control" placeholder="Deje aquí su comentario" id="floatingTextarea"  v-model="form.message"></textarea>
     </div>
     <div class="col-md-12">
         <label class="form-label text-start" for="inputGroupFile01">Imagen</label>
         <input ref="fileInput" class="form-control" type="file" id="inputGroupFile01">
     </div>
     <div class="col-12">
-        <button class="btn btn-primary" type="submit">Enviar</button>
+        <button class="btn btn-primary" type="submit" @click="sendForm">Enviar</button>
     </div>
 </form>
 

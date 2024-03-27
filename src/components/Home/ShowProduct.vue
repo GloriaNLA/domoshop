@@ -4,7 +4,7 @@
         <div class="row d-flex justify-content-start my-3">
             <div class=" col-auto">
                 <button class="btn btn-info btn-sm" @click="mtdbackhome">
-                    <i class="fa fa-arrow-left"></i> Home
+                    <i class="fa fa-arrow-left"></i> Regresar
                 </button>
             </div>
         </div>
