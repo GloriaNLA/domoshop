@@ -5,21 +5,19 @@
     <Product v-if="page=='list'" @mtdAddCarrito="mtdAddCarrito" :dataProducts="dataProducts" @mtdShowProduct="mtdShowProduct" :opcion="opcion"></Product>
 
     <div style="position: fixed; top: 90%; transform: translateY(-50%); left: 10px;">
-        <button class="btn btn-primary rounded-circle" type="button" data-bs-toggle="offcanvas" data-bs-tooltip="tooltip"
+        <button class="btn btn-primary rounded-circle" type="button" data-bs-toggle="offcanvas" 
          data-bs-target="#offcanvasScrolling"
          aria-controls="offcanvasScrolling" data-bs-placement="top"
-        data-bs-custom-class="custom-tooltip"
-        data-bs-title="Comunicate con uno de nuestros asesores"
          >
             <i class="fas fa-user i-custom"></i> <!-- Cambia 'fas fa-user' al nombre de la clase de tu icono de asistente -->
         </button>
     </div>
     <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
         <div class="offcanvas-header bg-main">
-            <h5 class="offcanvas-title text-white" id="offcanvasScrollingLabel">Enviamos tu dudas y preguntas</h5>
+            <h3 class="offcanvas-title text-white" id="offcanvasScrollingLabel">Te asesoramos</h3>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body">
+        <div class="offcanvas-body bg-light">
             <BodyOffCanvas @mtdHidden="mtdHidden"></BodyOffCanvas>
         </div>
     </div>
@@ -327,7 +325,7 @@ export default {
             this.setItemCarrito = {
                 id: product.id,
                 name: product.name,
-                price: product.price,
+                price: product.price.toFixed(2),
                 image: product.images[0].url,
                 quantity: 1,
             }

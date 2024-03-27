@@ -6,11 +6,15 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     carrito: [],
+    user: '',
   },
   getters: {},
   mutations: {
     agregarAlCarrito(state, producto) {
       state.carrito.push(producto);
+    },
+    loging (state, userName){
+      state.user = userName;
     },
     eliminarItemDelCarrito(state, id) {
       for (let i = 0; i < state.carrito.length; i++) {

@@ -52,10 +52,10 @@
                     <p>Resumen de la compra</p>
                 </blockquote>
                 <hr>
-                <p class="text-start"><b>Total: S/. {{ subtotal }}.00</b></p>
+                <p class="text-start"><b>Total: S/. {{ subtotal }}</b></p>
                 <p class="text-start">Costo de Envio: S/.00.00</p>
                 <hr>
-                <p class="text-start"><b>Total: {{ total }}</b></p>
+                <p class="text-start"><b>Total: S/. {{ total }}</b></p>
                 <div class="mt-3">
                     <button class="btn-buy" @click="mtdBuy"> Comprar Ahora!</button>
                 </div>
@@ -148,10 +148,10 @@ export default {
             this.carrito.forEach(item => {
                 total += item.price * item.quantity;
             });
-            return total;
+            return total.toFixed(2);
         },
         total() {
-            return this.subtotal + 0;
+            return this.subtotal ;
         }
     },
     methods: {

@@ -2,9 +2,11 @@
 <div>
     <div class="body-form d-flex justify-content-center">
         <form>
-            <h1 class="h3 mb-3 fw-normal">Identificate</h1>
-
-            <div class="form-floating">
+            <h1 class="h5 mb-3 fw-normal">Identificate</h1>
+            <div class="my-2">
+                    <img src="@/assets/logoempire.png" alt="Carrito Vacío" style="width: 100px; height: 100px;">
+                </div>
+            <div class="form-floating mb-2">
                 <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Email address</label>
             </div>
@@ -13,13 +15,12 @@
                 <label for="floatingPassword">Password</label>
             </div>
 
-            <div class="checkbox mb-3">
+            <div class="checkbox my-3">
                 <label>
                     <input type="checkbox" value="remember-me"> Remember me
                 </label>
             </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesion</button>
         </form>
     </div>
 </div>
@@ -39,10 +40,10 @@ export default {
 .body-form {
     display: flex;
     align-items: center;
-    padding-top: 40px;
+    padding-top: 10px;
     padding-bottom: 40px;
     background-color: #f5f5f5;
-    height: 100%;
+    height: 50em;
 }
 
 .form-signin {

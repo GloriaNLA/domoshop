@@ -39,13 +39,18 @@
                         <p class="text-product fw-bolder">S/. {{product.price}}.00</p>
                     </div>
                     <div class="tarjeta my-2">
-                        <p>1</p>
+                        <div class="quantity-control">
+                            <button type="button" class="btn btn-outline-info btn-sm" @click="mtdItemProductDelect(product.id)">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <div class="quantity-display">{{ cpQuantity }}</div>
+                        </div>
                     </div>
                     <div class="mt-2">
                         <button class="btn btn-success" @click="mtdAddCarrito(product)">
                             Añadir a Carrito <i class="fas fa-cart-plus"></i>
                         </button>
-                        
+
                     </div>
                 </div>
             </div>
@@ -100,6 +105,12 @@
 </template>
 
 <script>
+import {
+    mapState
+} from 'vuex';
+import {
+    mapMutations
+} from 'vuex';
 export default {
     name: 'componentes-Home-ShowProduct',
     components: {
@@ -113,10 +124,29 @@ export default {
             }
         }
     },
+    computed: {
+        ...mapState(['carrito']),
+
+        cpQuantity() {
+            let cont = 0;
+            this.carrito.forEach(item => {
+                if(item.id == this.product.id){
+                    cont +=1;
+                }
+            });
+            return cont;
+
+        }
+    },
     methods: {
+        ...mapMutations(['eliminarItemDelCarrito']),
+
         mtdAddCarrito: function (product) {
             this.$emit('mtdAddCarrito', product);
-        }
+        },
+        mtdItemProductDelect: function (id) {
+            this.eliminarItemDelCarrito(id);
+        },
     },
 
 }
@@ -142,6 +172,6 @@ export default {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
+    justify-content: center !important;
 }
-
 </style>

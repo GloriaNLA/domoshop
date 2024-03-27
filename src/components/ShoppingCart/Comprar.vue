@@ -1,7 +1,7 @@
 <template>
 <div class="container">
     <div>
-        <div class="row mt-5 bg-light cont-shopping">
+        <div class="row mt-5 bg-light cont-comprar">
             <div class="col-md-8 mt-3">
                 <div class="card-resumen p-3" v-if="numPage == 1">
                     <div class="text-start">Ya esta a pocos pasos de terminar su compra.. </div>
@@ -76,11 +76,18 @@
                     </div>
                 </div>
                 <div class="card-resumen p-3" v-else>
+                    <div class="row">
+                        <div class="col-auto my-2">
+                        <button class="btn btn-primary btn-sm" @click="retroceder">
+                            <i class="fas fa-arrow-circle-left"></i>
+                        </button>
+                    </div>
+                    </div>
                     <div class="text-start">Registre su medio de pago.. </div>
                     <div class="fw-bold text-start">Finalizar venta</div>
                     <div class="my-4 border-2">
                         <form class="row g-3 needs-validation1" novalidate>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <label for="validationCustom04" class="form-label">Tipo de Documento</label>
                                 <select class="form-select" id="validationCustom04" required>
                                     <option selected disabled value="">Selecciona...</option>
@@ -92,19 +99,41 @@
                                     Please selecciona una opcion
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <label for="validationCustom02" class="form-label text-start-label">Número de Documento</label>
                                 <input type="text" class="form-control" id="validationCustom02" placeholder="75560943" required>
                                 <div class="valid-feedback">
                                     ¡Correcto!
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <label for="validationCustom02" class="form-label text-start-label">Numero de Celular</label>
                                 <input type="text" class="form-control" id="validationCustom02" placeholder="906193223" maxlength="9" required>
                                 <div class="valid-feedback">
                                     ¡Correcto!
                                 </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="payment-options">
+                                    <h4>Seleccione un método de pago</h4>
+                                    <div>
+                                        <input type="radio" id="izipay" name="payment-method" class="form-check-input" value="izipay" @change="selectPaymentMethod">
+                                        <img class="payment-icons-img" src="@/assets/izipaylogo.jpg" alt="izipay">
+
+                                    </div>
+                                    <div class="my-3">
+                                        <input type="radio" id="paypal" name="payment-method" class="form-check-input" value="paypal" @change="selectPaymentMethod">
+                                        <img class="payment-icons-img" src="@/assets/paypal.jpg" alt="PayPal">
+                                    </div>
+                                    <div class="qr-code mb-2">
+                                        <img v-if="selectedMethod === 'izipay'" class="img-qr" src="@/assets/izipay_qr_code.jpg" alt="Código QR Visa">
+                                        <img v-else-if="selectedMethod === 'paypal'" class="img-qr" src="@/assets/paypal_qr_code.png" alt="Código QR Mastercard">
+                                    </div>
+                                    <div>
+                                        <h2>Total: S/. {{ total }}</h2>
+                                    </div>
+                                </div>
+
                             </div>
                             <div class="col-auto">
                                 <div class="form-check">
@@ -151,7 +180,7 @@
                         </ol>
                     </div>
                     <div class="mt-2">
-                        <button class="btn btn-success w-100">Total: S/. {{ total }}.00</button>
+                        <button class="btn btn-success w-100">Total: S/. {{ total }}</button>
                     </div>
                 </div>
             </div>
@@ -163,9 +192,10 @@
 <script>
 export default {
     name: 'c-ShoppingCart-comprar',
-    data(){
+    data() {
         return {
-          numPage : 1
+            numPage: 1,
+            selectedMethod: null
         }
     },
     props: {
@@ -173,16 +203,19 @@ export default {
             type: Array
         }
     },
-    computed:{
+    computed: {
         total() {
             let total = 0;
             this.dataShow.forEach(item => {
                 total += item.price * item.quantity;
             });
-            return total;
+            return total.toFixed(2);;
         },
     },
     methods: {
+        selectPaymentMethod(event) {
+            this.selectedMethod = event.target.value;
+        },
         sendForm: function () {
             // Fetch all the forms we want to apply custom Bootstrap validation styles to
             const forms = document.querySelectorAll('.needs-validation');
@@ -193,7 +226,7 @@ export default {
                     if (!form.checkValidity()) {
                         event.preventDefault()
                         event.stopPropagation()
-                    }else{
+                    } else {
                         this.numPage = 2;
                     }
 
@@ -211,25 +244,60 @@ export default {
                     if (!form.checkValidity()) {
                         event.preventDefault()
                         event.stopPropagation()
-                    }else{
+                    } else {
                         Swal.fire({
-                        icon: "success",
-                        title: "Pago registrado",
-                        showConfirmButton: false,
-                        timer: 2000,
-                    });
+                            icon: "success",
+                            title: "Pago registrado",
+                            showConfirmButton: false,
+                            timer: 2000,
+                        });
                     }
 
                     form.classList.add('was-validated')
                 }, false)
             })
+        },
+        retroceder: function () {
+            this.numPage = 1;
         }
     }
 }
 </script>
 
 <style>
+.cont-comprar {
+    height: 60em !important;
+}
 .text-start-label {
     text-align: start !important;
+}
+
+.payment-options {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.payment-options h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-icons-img {
+    width: 80px;
+    margin: 0 10px;
+}
+.img-qr {
+    width: 120px;
+    margin: 0 10px;
 }
 </style>
