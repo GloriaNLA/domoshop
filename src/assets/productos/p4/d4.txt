@@ -1,0 +1,10 @@
+nombre: SENSOR DE INUNDACIÓN TUYA CON SIRENA PST-SQ400B
+
+Precio: 49
+
+Descripción:
+• Detector inalámbrico de fugas de agua
+• Sirena integrada dentro del sensor
+• Cuando se detecta agua notifica a través de la aplicación móvil
+• Control desde cualquier lugar donde Internet esté disponible
+• Compatible con iOS y Android

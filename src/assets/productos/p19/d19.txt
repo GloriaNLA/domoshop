@@ -1,0 +1,10 @@
+nombre: TP-LINK - EXTENSOR DE COBERTURA TL-WA850RE
+
+Precio: 89
+
+Descripción: 
+Expande fácilmente la cobertura inalámbrica con sólo presionar el botón de Extensor de Rango
+1 Puerto Ethernet RJ45 10/100Mbps
+Estándares Inalámbricos: IEEE 802.11n, IEEE 802.11g, IEEE 802.11b
+2 Antenas externas
+Tasa de Señal 11n: Hasta 300Mbps (dinámica), 11g: Hasta 54Mbps (dinámica), 11b: Hasta 11Mbps (dinámica)

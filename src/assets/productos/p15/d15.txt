@@ -1,0 +1,11 @@
+nombre: ALARMA SENSOR INTELIGENTE EXTERIOR PIR SOLAR WIFI CON SIRENA 120 DB
+
+Precio: 192
+
+Descripción: 
+* Sensor de detección exterior con energía solar Tuya WiFi con función de alarma de sonido y luz.
+* El sensor no detecta animales pequeños, solo humanos
+* Sonido de 120 decibelios que se puede escuchar hasta 100m de distancia
+* IP 65
+* No detecta animales pequeños
+Sensor Alarma PIR Tuya SOLAR WiFi con sirena y luz
